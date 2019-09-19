@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "lodash": "^4.17.15",
     "mysql2": "^1.7.0",
     "sequelize": "^5.18.4"
   },

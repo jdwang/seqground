@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const config = require('./config');
-
+const _ = require('lodash');
 
 const seq = new Sequelize(config.database,config.username,config.password,{
     host:config.host,
@@ -21,8 +21,13 @@ seq
   .catch(err => {
     console.error('Unable to connect to the database:', err);
   });
+
+
 // 报错解决方法：ALTER USER 'username'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-return
+
+
+
+
 const News = seq.define('news', {
     // attributes
     title: {
@@ -42,14 +47,34 @@ const News = seq.define('news', {
 // options
 });
 
-News.create({
-    
-}).then((p)=>{
-    console.log(`created.${JSON.stringify(p)}`)
-}).catch(e=>{
-    console.log(`failed:${e}`)
-})
+// insertData([
+//     {
+//         title:'资讯1',
+//         author:'老师',
+//         content:'不卑不亢就离开家'
+//     },
+//     {
+//         title:'资讯2',
+//         author:'老师',
+//         content:'离开就看见'
+//     },
+// ])
+
 
 News.findAll().then(news => {
-console.log("All users:", JSON.stringify(news, null, 4));
+    console.log("All users:", JSON.stringify(news, null, 4));
 });
+
+
+
+
+// 插入数据库
+function insertData(options){
+
+    // todo : 查重
+    News.bulkCreate(options).then((p)=>{
+        console.log(`created.${JSON.stringify(p)}`)
+    }).catch(e=>{
+        console.log(`failed:${e}`)
+    })
+}
