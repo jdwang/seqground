@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const config = require('./config');
 const _ = require('lodash');
+const axios = require('axios');
 
 const seq = new Sequelize(config.database,config.username,config.password,{
     host:config.host,
@@ -11,20 +12,6 @@ const seq = new Sequelize(config.database,config.username,config.password,{
         idle:30000
     }
 })
-
-// 验证登录
-// seq
-//   .authenticate()
-//   .then(() => {
-//     console.log('Connection has been established successfully.');
-//   })
-//   .catch(err => {
-//     console.error('Unable to connect to the database:', err);
-//   });
-
-
-// 报错解决方法：ALTER USER 'username'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-
 
 
 
