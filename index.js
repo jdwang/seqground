@@ -47,6 +47,11 @@ const News = seq.define('news', {
 // options
 });
 
+
+
+//  insert 
+
+
 // insertData([
 //     {
 //         title:'资讯1',
@@ -61,10 +66,36 @@ const News = seq.define('news', {
 // ])
 
 
-News.findAll().then(news => {
-    console.log("All users:", JSON.stringify(news, null, 4));
+// select  
+
+// News.findAll({
+//     attributes:['title']
+// }).then(news => {
+//     // console.log("All users:", JSON.stringify(news, null, 4));
+//     let data  =  JSON.parse(JSON.stringify(news, null, 4));
+//     for(let i = 0 ; i < data.length ; i++){
+
+//         console.log(data[i].title)
+//     }
+// });
+
+
+
+// update
+
+News.findAll({
+    attributes:['title']
+}).then(news => {
+    // console.log("All users:", JSON.stringify(news, null, 4));
+    let data  =  JSON.parse(JSON.stringify(news, null));
+    for(let i = 0 ; i < data.length ; i++){
+
+        console.log(data[i].title)
+    }
 });
 
+
+// delete 
 
 
 

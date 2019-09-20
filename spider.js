@@ -48,8 +48,13 @@ const News = seq.define('news', {
 // ])
 
 
-News.findAll().then(news => {
-    console.log("All users:", JSON.stringify(news, null, 4));
+// News.findAll().then(news => {
+//     console.log("All users:", JSON.stringify(news, null, 4));
+// });
+
+
+News.findAll().then({
+    attributes:['title']
 });
 
 

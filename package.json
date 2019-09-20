@@ -2,15 +2,20 @@
   "name": "seqground",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "micro.js",
   "dependencies": {
     "axios": "^0.19.0",
+    "level": "^5.0.1",
     "lodash": "^4.17.15",
+    "micro": "^9.3.4",
     "mysql2": "^1.7.0",
     "sequelize": "^5.18.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "then-sleep": "^1.0.1"
+  },
   "scripts": {
+    "micro": "micro -p 8085",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
