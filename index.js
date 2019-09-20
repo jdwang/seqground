@@ -69,25 +69,39 @@ const News = seq.define('news', {
 
 // select  
 
-News.findAll({
-    attributes:['content'],
-    // where:{
-    //     'author':'老师',
-    //     'title':'资讯1'
-    // }
-    where:{
-        'id':{
-            [Op.gt]:3
-        }
-    }
-}).then(news => {
-    // console.log("All users:", JSON.stringify(news, null, 4));
-    let data  =  JSON.parse(JSON.stringify(news, null, 4));
-    for(let i = 0 ; i < data.length ; i++){
+// News.findAll({
+//     attributes:['content'],
+//     // // multiple
+//     // where:{
+//     //     'author':'老师',
+//     //     'title':'资讯1'
+//     // }
+//     // // filter
+//     // where:{
+//     //     'id':{
+//     //         [Op.gt]:3
+//     //     }
+//     // }
+//     // limit & offset & order
+//     // limit:3,
+//     // // offset:3,
+//     // order:[
+//     //     ['id','desc']
+//     // ]
+//     // // like
+//     where: {
+//         'title': {
+//             [Op.like]: '资讯%'
+//         }
+//     }
+// }).then(news => {
+//     // console.log("All users:", JSON.stringify(news, null, 4));
+//     let data  =  JSON.parse(JSON.stringify(news, null, 4));
+//     for(let i = 0 ; i < data.length ; i++){
 
-        console.log(data[i].content)
-    }
-});
+//         console.log(data[i].content)
+//     }
+// });
 
 
 
